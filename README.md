@@ -45,7 +45,7 @@ If you want to reach out, feel free to contact me through the form on my website
 ---
 
 ## 📌 Live Portfolio  
-🔗 **Coming Soon…**
+🔗 https://tri-netrax.github.io/personal-portfolio/
 
 ---
 
