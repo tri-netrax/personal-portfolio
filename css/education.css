@@ -1,0 +1,138 @@
+/* ========================= EDUCATION SECTION ========================= */
+.education-section {
+  padding: 120px 10% 80px;
+  background: #0e0f1a;
+  color: #fff;
+}
+
+.education-section h2.section-title {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 50px;
+  color: #ff4fd8;
+}
+
+/* Container for all education items */
+.edu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Individual education item */
+.edu-item {
+  background: #161722;
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px #ff4fd833;
+  position: relative;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+  overflow: hidden; /* for neon lines */
+}
+
+/* Slide even items from right */
+.edu-item:nth-child(even) {
+  transform: translateX(50px);
+}
+
+/* Neon left & right lines */
+.edu-item::before,
+.edu-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #ff4fd8, #4318ff);
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.edu-item::before {
+  left: 0;
+}
+
+.edu-item::after {
+  right: 0;
+}
+
+/* Item header */
+.edu-item h3 {
+  font-size: 20px;
+  color: #00eaff;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.edu-item p {
+  font-size: 16px;
+  color: #cfc3ff;
+}
+
+/* Slide-in active class */
+.edu-item.slide-left {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hover glow effect */
+.edu-item:hover {
+  box-shadow: 0 0 25px #ff4fd877, 0 0 50px #4318ff55;
+}
+
+.edu-item:hover::before,
+.edu-item:hover::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 1024px) {
+  .edu-item,
+  .edu-item:nth-child(even) {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .education-section {
+    padding: 100px 5% 60px;
+  }
+
+  .edu-container {
+    gap: 20px;
+  }
+
+  .edu-item {
+    transform: translateY(30px);
+  }
+
+  .edu-item.slide-left {
+    transform: translateY(0);
+  }
+
+  .edu-item::before,
+  .edu-item::after {
+    display: none; /* hide neon lines on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .education-section {
+    padding: 80px 5% 50px;
+  }
+
+  .edu-item h3 {
+    font-size: 18px;
+  }
+
+  .edu-item p {
+    font-size: 14px;
+  }
+}
